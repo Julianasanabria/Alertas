@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Tabla</title>
+    <link rel="stylesheet" href="./tabla.css">
+    <link rel="stylesheet" href="../Alertas.css">
+</head>
+<body>
+    <div id="alerta" class="alerta oculto"></div> <!-- Contenedor de alertas -->
+    <div class="contenedor">
+        <div class="titulo">Formulario</div>
+        <form id="registro-form">
+            <input type="text" id="nombres" name="nombres" placeholder="Nombres">
+            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
+            <select id="opcion" name="opcion">
+                <option value="" disabled selected>Por favor seleccionar tipo de documento</option>
+                <option value="Cedula">Cedula de identidad</option>
+                <option value="Visa">Tarjeta de identidad</option>
+                <option value="Pasaporte">Pasaporte</option>
+                <option value="Visa">Visa de E.E.U.U</option>
+            </select>
+            <input type="text" id="documento" name="documento" placeholder="Número de documento">
+            <input type="email" id="email" name="email" placeholder="Correo electrónico">
+            <div class="fecha-input">
+                <input type="date" id="fecha" name="fecha">
+                <span class="calendario-icono">Fecha de nacimiento</span>
+            </div>
+            <div class="genero">
+                <label>
+                    <input type="radio" name="genero" value="Mujer"> Mujer
+                </label>
+                <label>
+                    <input type="radio" name="genero" value="Hombre"> Hombre
+                </label>
+            </div>
+            <div class="boton-enviar">
+                <button type="submit">ENVIAR</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="tabla-contenedor">
+        <table id="tabla-datos">
+            <thead>
+                <tr>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Tipo de Documento</th>
+                    <th>Número</th>
+                    <th>Correo</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Género</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los datos ingresados se agregarán aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./js/tabla.js"></script>
+</body>
+</html>

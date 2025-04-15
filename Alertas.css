@@ -1,0 +1,26 @@
+.alerta {
+    display: none; /* Oculto por defecto */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.alerta.error {
+    background-color: #f8d7da; /* Fondo rojo claro */
+    color: #721c24; /* Texto rojo oscuro */
+    border: 1px solid #f5c6cb; /* Borde rojo */
+}
+
+.alerta.exito {
+    background-color: #1100ff; /* Fondo verde claro */
+    color: #155724; /* Texto verde oscuro */
+    border: 1px solid #0a012b; /* Borde verde */
+}
+
+.alerta.visible {
+    display: block; /* Mostrar la alerta */
+}

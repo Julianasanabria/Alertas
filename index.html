@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exposición de Trabajos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a0033, #1a0066);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .contenedor-trabajos {
+            max-width: 1200px;
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .trabajo {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .trabajo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .trabajo img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .trabajo h3 {
+            font-size: 20px;
+            margin: 0 0 10px;
+            color: #ffffff;
+        }
+
+        .trabajo p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        .trabajo a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #6a3de8;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .trabajo a:hover {
+            background: #5731c4;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-trabajos">
+        <div class="trabajo">
+            <img src="https://via.placeholder.com/300x200" alt="Trabajo 1">
+            <h3>Trabajo de las alertas</h3>
+            <p>"Formulario en HTML con validaciones personalizadas y muestra de alertas estilizadas con CSS."</p>
+            <a href="alertas.html">Ver más</a>
+        </div>
+        <div class="trabajo">
+            <img src="https://via.placeholder.com/300x200" alt="Trabajo 2">
+            <h3>Trabajo de la tabla</h3>
+            <p>Descripción breve del segundo trabajo. Este trabajo es innovador y creativo.</p>
+            <a href="#">Ver más</a>
+        </div>
+    </div>
+</body>
+</html>
