@@ -19,6 +19,7 @@ form.addEventListener('submit', function (event) {
     }
 
     const fila = document.createElement('tr');
+    fila.className = 'new-row'; // Añadir clase para la animación
     fila.innerHTML = `
         <td>${nombres}</td>
         <td>${apellidos}</td>
@@ -32,6 +33,20 @@ form.addEventListener('submit', function (event) {
     // Insertar la fila al principio de la tabla
     tabla.prepend(fila);
 
+    // Guardar los datos en la consola
+    const datosUsuario = {
+        nombres,
+        apellidos,
+        tipoDocumento: opcion,
+        numeroDocumento: documento,
+        email,
+        fechaNacimiento: fecha,
+        genero
+    };
+    
+    console.log('Datos guardados:');
+    console.log(datosUsuario);
+
     mostrarAlerta('<strong>Éxito:</strong> Datos agregados correctamente.', 'exito');
     form.reset();
 });
@@ -44,4 +59,14 @@ function mostrarAlerta(mensaje, tipo) {
     setTimeout(() => {
         alerta.className = `alerta ${tipo} oculto`;
     }, 3000);
+}
+
+// Función para hacer scroll suave a la tabla cuando se agrega un nuevo registro
+function scrollToTable() {
+    const tablaContainer = document.querySelector('.tabla-container');
+    if (tablaContainer) {
+        if (window.innerWidth <= 992) { // En dispositivos móviles
+            tablaContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 }

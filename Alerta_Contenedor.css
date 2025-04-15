@@ -8,12 +8,21 @@ body {
     background-color: #0a0033;
     background-image: linear-gradient(135deg, #0a0033 0%, #1a0066 100%);
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.page-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    gap: 30px;
 }
 
 .contenedor {
-    margin-top: 60px; /* Espacio para la alerta */
-    width: 100%;
-    max-width: 500px;
+    flex: 1;
+    max-width: 450px;
     padding: 20px;
 }
 
@@ -133,6 +142,72 @@ form select:focus {
     font-size: 20px;
     text-decoration: none;
     letter-spacing: 2px;
+}
+
+/* Estilos para la tabla */
+.tabla-container {
+    flex: 1;
+    max-width: 650px;
+    max-height: 80vh;
+    overflow: auto;
+    border-radius: 20px;
+    border: 2px solid #3a1f7a;
+    background-color: rgba(10, 0, 51, 0.8);
+    padding: 20px;
+    box-sizing: border-box;
+    animation: borderContenedor 3s linear infinite;
+}
+
+.tabla-container table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+}
+
+.tabla-container th, 
+.tabla-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tabla-container th {
+    background-color: rgba(106, 61, 232, 0.3);
+    color: #ffffff;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.tabla-container tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.tabla-container tbody tr:hover {
+    background-color: rgba(106, 61, 232, 0.2);
+}
+
+/* Animación para nuevas filas */
+@keyframes newRowHighlight {
+    0% { background-color: rgba(106, 61, 232, 0.5); }
+    100% { background-color: transparent; }
+}
+
+.new-row {
+    animation: newRowHighlight 2s ease-out;
+}
+
+@media (max-width: 992px) {
+    .page-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contenedor,
+    .tabla-container {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,6 @@
 const form = document.getElementById('registro-form');
 const tabla = document.getElementById('tabla-datos').querySelector('tbody');
+const alerta = document.getElementById('alerta');
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -13,7 +14,7 @@ form.addEventListener('submit', function (event) {
     const genero = document.querySelector('input[name="genero"]:checked')?.value || 'No especificado';
 
     if (!nombres || !apellidos || !opcion || !documento || !email || !fecha) {
-        alert('Por favor, complete todos los campos.');
+        mostrarAlerta('<strong>Error:</strong> Por favor, complete todos los campos.', 'error');
         return;
     }
 
@@ -31,5 +32,30 @@ form.addEventListener('submit', function (event) {
     // Insertar la fila al principio de la tabla
     tabla.prepend(fila);
 
+    // Guardar los datos en la consola
+    const datosUsuario = {
+        nombres,
+        apellidos,
+        tipoDocumento: opcion,
+        numeroDocumento: documento,
+        email,
+        fechaNacimiento: fecha,
+        genero
+    };
+    
+    console.log('Datos guardados:');
+    console.log(datosUsuario);
+
+    mostrarAlerta('<strong>Éxito:</strong> Datos agregados correctamente.', 'exito');
     form.reset();
 });
+
+function mostrarAlerta(mensaje, tipo) {
+    alerta.innerHTML = mensaje; // Usar innerHTML para contenido personalizado
+    alerta.className = `alerta ${tipo} visible`;
+
+    // Ocultar la alerta después de 3 segundos con animación de salida
+    setTimeout(() => {
+        alerta.className = `alerta ${tipo} oculto`;
+    }, 3000);
+}
