@@ -1,5 +1,4 @@
 const form = document.getElementById('registro-form');
-const tabla = document.getElementById('tabla-datos').querySelector('tbody');
 const alerta = document.getElementById('alerta');
 
 form.addEventListener('submit', function (event) {
@@ -18,19 +17,7 @@ form.addEventListener('submit', function (event) {
         return;
     }
 
-    const fila = document.createElement('tr');
-    fila.innerHTML = `
-        <td>${nombres}</td>
-        <td>${apellidos}</td>
-        <td>${opcion}</td>
-        <td>${documento}</td>
-        <td>${email}</td>
-        <td>${fecha}</td>
-        <td>${genero}</td>
-    `;
-
-    // Insertar la fila al principio de la tabla
-    tabla.prepend(fila);
+    // Ya no se crea ni inserta la fila en la tabla porque la tabla ha sido eliminada
 
     // Guardar los datos en la consola
     const datosUsuario = {
